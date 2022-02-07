@@ -1,0 +1,18 @@
+version: '3.7'
+
+x-logging:
+  driver: json-file
+  options:
+    max-file: '5'
+    max-size: 1m
+
+services:
+  adb-docker-demo:
+    image: adb-docker-demo:latest
+    container_name: adb-docker-demo
+    environment:
+      - ANDROID_ADB_SERVER_ADDRESS=host.docker.internal
+    extra_hosts:
+      - "host.docker.internal:host-gateway"    
+    stdin_open: true # docker run -i
+    tty: true        # docker run -t
