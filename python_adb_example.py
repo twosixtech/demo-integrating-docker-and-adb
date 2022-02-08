@@ -17,6 +17,7 @@ from typing import Any, Dict, TypedDict
 # Classes
 ###
 
+
 class AndroidDeviceInfo(TypedDict):
     """Relevant Device Info for adb connected device"""
 
@@ -67,9 +68,7 @@ class AndroidDevice:
             AndroidDevice: String printable representation of AndroidDevice
         """
 
-        return (
-            f"<AndroidDevice {self.device_info['model']} - {self.serial}>"
-        )
+        return f"<AndroidDevice {self.device_info['model']} - {self.serial}>"
 
     def __repr__(self) -> str:
         """
@@ -108,7 +107,9 @@ def main():
             print(f"    model = {android_device.device_info['model']}")
             print(f"    architecture = {android_device.device_info['architecture']}")
             print(f"    sdk_version = {android_device.device_info['sdk_version']}")
-            print(f"    release_version = {android_device.device_info['release_version']}")
+            print(
+                f"    release_version = {android_device.device_info['release_version']}"
+            )
     else:
         print("No Android Devices Connected")
 

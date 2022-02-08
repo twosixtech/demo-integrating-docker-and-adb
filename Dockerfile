@@ -23,7 +23,7 @@ RUN apt-get -y update && \
     update-alternatives --set python3-config /usr/bin/python3.8-config
 
 RUN python3.8 -m pip install setuptools && \
-    python3.8 -m pip install pure-python-adb sh
+    python3.8 -m pip install pure-python-adb
 
 RUN mkdir -p /code
 WORKDIR /code
