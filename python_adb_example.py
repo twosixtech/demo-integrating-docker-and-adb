@@ -8,8 +8,7 @@ import os
 import shutil
 from functools import cached_property
 
-from ppadb.client import Client as AdbClient
-from sh import sed
+from adbutils import AdbClient
 from typing import Any, Dict, TypedDict
 
 
@@ -49,13 +48,12 @@ class AndroidDevice:
         self.adb_device = self.adb_client.device(serial)
 
         self.serial = serial
-        self.device_properties = self.adb_device.get_properties()
         self.device_info = AndroidDeviceInfo(
-            serial=self.device_properties["ro.serialno"],
-            model=self.device_properties["ro.product.system.model"],
-            architecture=self.device_properties["ro.product.cpu.abi"],
-            sdk_version=int(self.device_properties["ro.build.version.sdk"]),
-            release_version=int(self.device_properties["ro.build.version.release"]),
+            serial=self.adb_device.prop.get("ro.serialno"),
+            model=self.adb_device.prop.get("ro.product.system.model"),
+            architecture=self.adb_device.prop.get("ro.product.cpu.abi"),
+            sdk_version=int(self.adb_device.prop.get("ro.build.version.sdk")),
+            release_version=int(self.adb_device.prop.get("ro.build.version.release")),
         )
 
     def __str__(self) -> str:
@@ -94,7 +92,7 @@ def main():
     adb_client = AdbClient(host="host.docker.internal", port=5037)
 
     android_devices = {}
-    adb_devices = adb_client.devices()
+    adb_devices = adb_client.device_list()
 
     if adb_devices:
         for adb_device in adb_devices:
