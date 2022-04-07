@@ -23,9 +23,9 @@ RUN apt-get -y update && \
     update-alternatives --set python3-config /usr/bin/python3.8-config
 
 RUN python3.8 -m pip install setuptools && \
-    python3.8 -m pip install adbutils
+    python3.8 -m pip install adbutils robotframework
 
 RUN mkdir -p /code
 WORKDIR /code
 
-COPY python_adb_example.py /code
+COPY python_adb_example.py robot_adb_example.robot /code/
