@@ -6,7 +6,7 @@ Demonstration of using ADB in Docker
 
 You must have the following installed:
 
-- Docker (version 20.X)
+- Docker (version 20.X or higher)
 - Android debug bridge (adb) (any version compatible with adb protocol v1.0.41)
 
 Ideally, connect an Android device and enable USB debugging. However, all
