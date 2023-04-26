@@ -22,13 +22,13 @@ Execute the `build_docker_image.sh` script to build the Docker image.
 
 ## To Run
 
-Execute the `run_docker_image.sh` to start the docker-compose project. With the
+Execute the `run_docker_container.sh` to start the docker-compose project. With the
 container running, use `docker exec` to run the Python script or run the Robot
 tests.
 
 ```
 # ./build_docker_image.sh
-# ./run_docker_image.sh
+# ./run_docker_container.sh
 Creating network "adb-docker-demo_default" with the default driver
 Creating adb-docker-demo ... done
 # docker exec adb-docker-demo ./python_adb_example.py

@@ -1,14 +1,12 @@
 #!/usr/bin/env bash
 # -----------------------------------------------------------------------------
-# Run the Docker Image
+# Stop the Docker Container
 #
 # Arguments:
 # N/A
 #
 # Example Call:
-#    bash run_docker_image.sh
+#    bash stop_docker_image.sh
 # -----------------------------------------------------------------------------
 
-adb kill-server
-adb -a nodaemon server start &> /dev/null &
-docker-compose up -d
+docker-compose down
