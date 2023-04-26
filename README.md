@@ -16,7 +16,7 @@ examples in this project will work without any Android devices present.
 
 Execute the `build_docker_image.sh` script to build the Docker image.
 
-```
+```shell
 # ./build_docker_image.sh
 ```
 
@@ -26,7 +26,7 @@ Execute the `run_docker_container.sh` to start the docker-compose project. With 
 container running, use `docker exec` to run the Python script or run the Robot
 tests.
 
-```
+```shell
 # ./build_docker_image.sh
 # ./run_docker_container.sh
 Creating network "adb-docker-demo_default" with the default driver
