@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Purpose:
-    TBD
+    List basic information for all connected Android devices
 """
 
 import os
