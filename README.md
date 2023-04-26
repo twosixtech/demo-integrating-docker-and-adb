@@ -17,7 +17,7 @@ examples in this project will work without any Android devices present.
 Execute the `build_docker_image.sh` script to build the Docker image.
 
 ```shell
-# ./build_docker_image.sh
+$ ./build_docker_image.sh
 ```
 
 ## To Run
@@ -27,8 +27,8 @@ container running, use `docker exec` to run the Python script or run the Robot
 tests.
 
 ```shell
-# ./build_docker_image.sh
-# ./run_docker_container.sh
+$ ./build_docker_image.sh
+$ ./run_docker_container.sh
 Creating network "adb-docker-demo_default" with the default driver
 Creating adb-docker-demo ... done
 # docker exec adb-docker-demo ./python_adb_example.py
@@ -39,7 +39,7 @@ Device:
     architecture = arm64-v8a
     sdk_version = 29
     release_version = 10
-# docker exec adb-docker-demo robot robot_adb_example.robot
+$ docker exec adb-docker-demo robot robot_adb_example.robot
 ==============================================================================
 Robot Adb Example                                                             
 ==============================================================================
