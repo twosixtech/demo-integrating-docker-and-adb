@@ -1,6 +1,6 @@
-# adb-docker-demo
+# Integrating Docker and ADB
 
-Example Using ADB in Docker
+Demonstration of using ADB in Docker
 
 ## Prerequisites
 
