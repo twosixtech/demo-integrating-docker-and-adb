@@ -1,4 +1,4 @@
-FROM ubuntu:18.04
+FROM ubuntu:20.04
 LABEL maintainer="Two Six Technologies <race@twosixlabs.com>"
 
 RUN apt-get update -y && \
